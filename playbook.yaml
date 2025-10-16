@@ -1,0 +1,14 @@
+- name: ansible_advanced_assignment
+  hosts: uvm
+  become: true
+
+  tasks:
+  
+    - name: Install curl, htop and git on Debian
+      apt:
+        name: "{{ item }}"
+        state: present
+      loop: 
+        - curl
+        - htop
+        - git
